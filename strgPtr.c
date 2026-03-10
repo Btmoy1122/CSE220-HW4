@@ -1,11 +1,14 @@
 #include "strgPtr.h"
 /* DO NOT use <string.h> or <ctype.h> */
 
+//Retunrs the length of a char array(string)
 int strgLen(const char *s) {
+    //Important Edge Cases
     if (s == NULL){
         return -1;
     }
 
+    //Logic for determining length
     int i = 0;
     while (s[i]!='\0'){
         i++;
@@ -14,11 +17,14 @@ int strgLen(const char *s) {
     
 }
 
+//Copies a string from a source into a destination 
 void strgCopy(const char *source, char *destination, size_t size) {
+    //Important Edge Cases
     if (source == NULL || destination == NULL || size == 0){
         return;
     }
 
+    //Logic for copying a string into destination
     size_t i = 0;
     while (source[i] != '\0' && i<size-1){
         destination[i] = source[i];
@@ -28,11 +34,14 @@ void strgCopy(const char *source, char *destination, size_t size) {
     
 }
 
+//Changes the case of characters
 void strgChangeCase(char *s) {
+    //Important Edge Cases
     if (s == NULL){
         return;
     }
 
+    //Logic for changing case where I determine if its upper or lower and then change it
     int i = 0;
     while (s[i] != '\0'){
         if ( (s[i]>='A' && s[i] <= 'Z') || (s[i]>='a' && s[i] <= 'z') ){
@@ -53,11 +62,15 @@ void strgChangeCase(char *s) {
     }
 }
 
+
+//Returns whether two strings are different or not
 int strgDiff(const char *s1, const char *s2) {
+    //Important Edge Cases
     if (s1 == NULL || s2 == NULL){
         return -2;
     }
 
+    //Logic for determining difference
     size_t i = 0;
     while (s1[i]!='\0' && s2[i]!='\0'){
         if (s1[i] != s2[i]){
@@ -71,11 +84,16 @@ int strgDiff(const char *s1, const char *s2) {
     return (int)i;
 }
 
+//Interleaves two strings and puts the result into d
 void strgInterleave(const char *s1, const char *s2, char *d, size_t size) {
+    //Important Edge Cases
     if (s1 == NULL || s2 == NULL || d == NULL || size == 0){
         return;
     }
 
+
+    //Interleave logic where I first interleave whatever possible from s1 and s2 till both or one runs out of space, which then add the rest at the end
+    //Also always account for having enough size
     size_t i = 0;
     size_t numChars = 0;
     while (s1[i] != '\0' && s2[i]!= '\0'){
@@ -115,7 +133,10 @@ void strgInterleave(const char *s1, const char *s2, char *d, size_t size) {
     d[numChars] = '\0';
 }
 
+
+//Reverses the letters in s
 void strgReverseLetters(char *s) {
+    //Important Edge Cases
     if (s == NULL){
         return;
     }
@@ -125,6 +146,8 @@ void strgReverseLetters(char *s) {
         return;
     }
 
+
+    //Logic to reverse Letters
     size_t left = 0;
     size_t right = (size_t)length-1;
 
