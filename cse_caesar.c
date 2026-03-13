@@ -1,7 +1,8 @@
 #include "cse_caesar.h"
 #include "strgPtr.h"
 /* DO NOT use <string.h> or <ctype.h> */
-
+//Brandon Moy 
+//116187802
 
 //Encrypts plaintext into cipher text
 int encryptCaesar(const char *plaintext, char *ciphertext, int key) {

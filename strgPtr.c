@@ -1,6 +1,7 @@
 #include "strgPtr.h"
 /* DO NOT use <string.h> or <ctype.h> */
-
+//Brandon Moy 
+//116187802
 //Retunrs the length of a char array(string)
 int strgLen(const char *s) {
     //Important Edge Cases
